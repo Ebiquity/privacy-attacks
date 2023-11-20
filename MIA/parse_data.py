@@ -7,7 +7,7 @@ import json
 random_state = 42
 test_size = 0.2
 inFileName = 'mia/data/network_traffic_data.csv'
-outFileName = 'mia/dataNetwork.npz'
+outFileName = 'mia/data/Network.npz'
 continuousFields = ['No.', 'Time', 'Length']
 categoricalFields = ['Source', 'Source Port', 'Destination', 'Destination Port', 'Protocol', 'Info', 'Extra']
 problemType = 'binary_classification'
