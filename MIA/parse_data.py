@@ -10,7 +10,7 @@ inFileName = 'mia/data/network_traffic_data.csv'
 outFileName = 'mia/data/Network.npz'
 continuousFields = ['No.', 'Time', 'Length']
 categoricalFields = ['Source', 'Source Port', 'Destination', 'Destination Port', 'Protocol', 'Info', 'Extra']
-problemType = 'clustering'
+problemType = 'multiclass_classification'
 
 class NpEncoder(json.JSONEncoder):
     def default(self, obj):
