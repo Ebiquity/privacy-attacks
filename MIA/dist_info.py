@@ -1,6 +1,8 @@
 from mia.data import load_dataset
 import pandas as pd
 import numpy as np
+import os
+
 CATEGORICAL = "categorical"
 ORDINAL = "ordinal"
 
@@ -32,6 +34,10 @@ def _compute_distance(syn, querys, metadata, use_std = True):
 data_name = 'Network'
 PATH = "./result/{}/dist_info/".format(data_name)
 
+if not os.path.exists(PATH):
+    os.makedirs(PATH)
+    
 train_data, test_data, meta_data, categorical_columns, ordinal_columns = load_dataset(data_name, benchmark=True)
 dist_info = pd.Series(_compute_distance(train_data, test_data, meta_data, False))
 dist_info.to_csv(PATH + "dist_info.csv" )
+print("dist_info.py Finished")

@@ -9,6 +9,16 @@ from mia.data import load_dataset
 from mia.attacks.fbb import FullBlackBoxAttacker
 from mia.attacks.wb import WhiteBoxAttacker
 
+import torch
+import numpy as np
+
+randomSeed = 2021
+torch.manual_seed(randomSeed)
+torch.cuda.manual_seed(randomSeed)
+torch.cuda.manual_seed_all(randomSeed) 
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+np.random.seed(randomSeed)
 
 parser = argparse.ArgumentParser('Run Experiments on Attacks')
 parser.add_argument('--gpu_num', type=str, default="1")
@@ -54,6 +64,7 @@ if config.attack == 'wb':
 
 elif config.attack == 'fbb':
     attacker = FullBlackBoxAttacker(victim_model, config.data)
+ 
     fbb_auc, fbb_ap = attacker.attack(train_data, test_data, meta_data, config.K)
 
     print('---- Full-black-box attack result on {} for {} ----'.format(config.target, config.data))

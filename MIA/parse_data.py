@@ -7,12 +7,20 @@ import json
 random_state = 42
 test_size = 0.2
 inFileName = 'mia/data/network_traffic_data.csv'
-outFileName = 'mia/dataNetwork.npz'
+outFileName = 'mia/data/Network.npz'
 continuousFields = ['No.', 'Time', 'Length']
 categoricalFields = ['Source', 'Source Port', 'Destination', 'Destination Port', 'Protocol', 'Info', 'Extra']
-problemType = 'binary_classification'
+problemType = 'clustering'
 
-
+class NpEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.float):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        
 data = {"columns":[]}
 
 if inFileName[-4:] != '.csv':
@@ -47,9 +55,10 @@ for col in df.columns:
 
 data['problem_type'] = problemType
 
+
 jsonFilePath = outFileName[:-4] + '.json'
 with open(jsonFilePath, "w") as f:
-    json.dump(data, f)
+    json.dump(data, f, cls=NpEncoder)
 
 train, test = train_test_split(new_df, test_size=test_size, random_state=random_state)
 np.savez(outFileName, train=train, test=test)
