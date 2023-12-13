@@ -1,0 +1,3 @@
+[submodule "Black-box-Model-Inversion-Attribute-Inference"]
+	path = Black-box-Model-Inversion-Attribute-Inference
+	url = https://github.com/smehnaz/Black-box-Model-Inversion-Attribute-Inference.git
