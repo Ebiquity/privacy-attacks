@@ -41,7 +41,13 @@ y_values_dict = {
     'Adult': {'income': ['<=50K', '>50K']},
     'GSS': {'hapmar': ['nottoohappy', 'prettyhappy', 'veryhappy']},
     'fivethirtyeight' : {'steak_type': ['Medium', 'Medium Well', 'Medium rare', 'Rare', 'Well']},
-    'original': {'Attack': [1, 0]}
+    'original': {'Attack': [1, 0]},
+    'ctgan_1': {'Attack': [1, 0]},
+    'kg_ctgan': {'Attack': [1, 0]},
+    'octgan': {'Attack': [1, 0]},
+    'pategan': {'Attack': [1, 0]},
+    'tablegan': {'Attack': [1, 0]},
+    'ctgan_dp_gan': {'Attack': [1, 0]}
 }
 
 

@@ -9,7 +9,12 @@ target_model_dict_dt = {
     'fivethirtyeight': 'model/621ffc908f679a67b70004a8',
     'GSS': 'model/621ffb3b8f679a67ac0004a8',
     'original': 'model/657ab37dbbe7434a13da49b9',
-    'ctgan_1': 'model/657ada94be9d6a0ca6dfa83a'
+    'ctgan_1': 'model/657ada94be9d6a0ca6dfa83a',
+    'kg_ctgan': 'model/657af76b23ce30765c8cdeb6',
+    'octgan': 'model/657af71105a3df09919c72e1',
+    'pategan': 'model/657af6f87411b427b1b9c9bc',
+    'tablegan': 'model/657af6ab7411b427b1b9c9b9',
+    'ctgan_dp_gan': 'model/657b19a123ce30765c8ce229'
 }
 
 target_model_dict_dnn = {

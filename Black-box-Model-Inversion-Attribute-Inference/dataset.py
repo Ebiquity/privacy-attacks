@@ -7,7 +7,12 @@ y_labels_dict = {
     'GSS': {'xmovie': ['x_yes', 'x_no']},
     'fivethirtyeight' : {'alcohol': ['Yes', 'No'], 'age': ['18-29', '30-44', '45-60', '> 60']},
     'original': {'Destination': ['GATEWAY_IP', 'CAMERA_IP', 'DOMAIN_IP']},
-    'ctgan_1': {'Destination': ['GATEWAY_IP', 'CAMERA_IP', 'DOMAIN_IP']}
+    'ctgan_1': {'Destination': ['GATEWAY_IP', 'CAMERA_IP', 'DOMAIN_IP']},
+    'kg_ctgan': {'Destination': ['GATEWAY_IP', 'CAMERA_IP', 'DOMAIN_IP']},
+    'octgan': {'Destination': ['GATEWAY_IP', 'CAMERA_IP', 'DOMAIN_IP']},
+    'pategan': {'Destination': ['GATEWAY_IP', 'CAMERA_IP', 'DOMAIN_IP']},
+    'tablegan': {'Destination': ['GATEWAY_IP', 'CAMERA_IP', 'DOMAIN_IP']},
+    'ctgan_dp_gan': {'Destination': ['GATEWAY_IP', 'CAMERA_IP', 'DOMAIN_IP']}
 }
 
 # the dataset class
@@ -34,6 +39,21 @@ class Dataset:
             self.y_attr = 'Attack'
         elif self.name == 'ctgan_1':
             dataset_path = 'data/ctgan_1.csv'
+            self.y_attr = 'Attack'
+        elif self.name == 'kg_ctgan':
+            dataset_path = 'data/kg_ctgan.csv'
+            self.y_attr = 'Attack'
+        elif self.name == 'octgan':
+            dataset_path = 'data/octgan.csv'
+            self.y_attr = 'Attack'
+        elif self.name == 'pategan':
+            dataset_path = 'data/pategan.csv'
+            self.y_attr = 'Attack'
+        elif self.name == 'tablegan':
+            dataset_path = 'data/tablegan.csv'
+            self.y_attr = 'Attack'
+        elif self.name == 'ctgan_dp_gan':
+            dataset_path = 'data/ctgan_dp_gan.csv'
             self.y_attr = 'Attack'
         else:
             raise ValueError(f'Dataset {self.name} is not part of the supported datasets')
