@@ -1,0 +1,9 @@
+numpy=1.24.3
+pandas=2.1.1
+torch=1.8.1
+scikit-learn=0.24.2
+pomegranate=0.14.9
+humanfriendly=10.0
+tqdm=4.66.1
+opacus=0.12.0
+scipy=1.11.3
