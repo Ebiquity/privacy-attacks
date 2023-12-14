@@ -1,0 +1,10 @@
+argparse
+pyyaml
+tqdm
+pandas
+numpy
+matplotlib
+scikit-learn
+bigml==6.3.2
+tabulate
+imblearn
